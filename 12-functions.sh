@@ -7,10 +7,10 @@ USERID=$(id -u)
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$1 command is.. FAILED"
+        echo "command is.. FAILED"
         exit 1
     else
-        echo "$1 command is.. SUCCESS"
+        echo "command is.. SUCCESS"
     fi
 }
 
