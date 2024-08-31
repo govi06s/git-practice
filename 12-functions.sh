@@ -30,7 +30,7 @@ else
     echo "git is already installed, nothing to do anything.."
 fi
 
-dnf install mysql
+dnf install mysql -y
 
 if [ $? -ne 0 ]
 then
