@@ -22,4 +22,4 @@ fi
 
 dnf list installed git
 
-VALIDATE $? "Installing git"
+VALIDATE $? "Installing MYSQL"
