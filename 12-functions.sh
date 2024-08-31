@@ -37,6 +37,6 @@ then
     echo "MYSQL is not installed, going to install it.."
     dnf install mysql -y
     VALIDATE $? "Installing MYSQL"
-else
-    echo "MYSQL installation was done, nothing to do"
+#else
+#    echo "MYSQL installation was done, nothing to do"
 fi
