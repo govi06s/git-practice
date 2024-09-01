@@ -45,7 +45,7 @@ fi
 
 for package in $@
 do
-  dnf list installed $package &> $LOG_FILE
+  dnf list installed $package &>>$LOG_FILE
   if [ $? -ne 0 ]
   then
       echo "$package is not installed, going to install it.." &>>$LOG_FILE
