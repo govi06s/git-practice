@@ -18,7 +18,7 @@ Y="\e[33m"
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-        echo "please rin the script with root prevelages" &>>$LOG_FILE
+        echo -e " $R please rin the script with root prevelages $N" &>>$LOG_FILE
         exit 1
     fi
 }
@@ -26,14 +26,22 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is.. FAILED" &>>$LOG_FILE
+        echo "$2 is.. $R FAILED $N" &>>$LOG_FILE
         exit 1
     else
-        echo "$2 is.. SUCCESS" &>>$LOG_FILE
+        echo -e "$2 is.. $G SUCCESS $N" &>>$LOG_FILE
     fi
 }
 
+USAGE(){
+    echo -e "$R USAGE: : $N sudo sh 16-redirectors.sh package1 package2 ..."
+    exit 1
+}
 CHECK_ROOT
+if [ $# -eq 0 ]
+then
+    USAGE
+fi
 
 for package in $@
 do
@@ -44,6 +52,6 @@ do
       dnf install $package -y &>> $LOG_FILE
       VALIDATE $? "Installing $package"
   else
-      echo "$package is already installed, nothing to do anything.." &>>$LOG_FILE
+      echo -e "$package is already $Y installed, nothing to do anything.. $N" &>>$LOG_FILE
   fi
 done
