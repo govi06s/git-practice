@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-dnf install git -y
+dnf list installed git
 
 if [ $? -ne 0 ]
 then
@@ -27,7 +27,7 @@ else
     echo "git is already installed, nothing to do anything.."
 fi
 
-dnf install mysql
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
