@@ -27,3 +27,8 @@ VALIDATE(){
 }
 
 CHECK_ROOT
+
+for package in $@
+do
+  echo "$package"
+done
